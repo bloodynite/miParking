@@ -20,17 +20,17 @@
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="6" size-md="4">
-      <ion-input class="input" type="email" placeholder="email" clear-input=true inputmode='email' required></ion-input>
+      <ion-input [(ngModel)]="email" class="input" type="email" placeholder="email" clear-input=true inputmode='email' required></ion-input>
     </ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="6" size-md="4">
-      <ion-input class="input" type="password" placeholder="password" required></ion-input>
+      <ion-input [(ngModel)]="pass" class="input" type="password" placeholder="password" required></ion-input>
     </ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col size="6">
-      <ion-button size="6" size-md="4" size-lg="4" (click)="onClick()" expand="block" shape="round">
+      <ion-button size="6" size-md="4" size-lg="4" (click)="onClickEntrar()" expand="block" shape="round">
         Entrar
       </ion-button>
     </ion-col>
@@ -44,7 +44,7 @@
     <ion-col class="label-invitado" size="12">Solo ver estacionamientos cercanos?</ion-col>
   </ion-row>
   <ion-row class="ion-justify-content-center">
-    <ion-col class="btn-invitado" size="6" size-md="4" size-lg="4"><ion-button (click)="onClick()" fill="clear" shape="round">
+    <ion-col class="btn-invitado" size="6" size-md="4" size-lg="4"><ion-button (click)="onClickInvitado()" fill="clear" shape="round">
       Ver como invitado
     </ion-button>
   </ion-col>

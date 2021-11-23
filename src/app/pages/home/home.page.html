@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <ion-buttons slot="end">
+        <ion-button color="danger" fill='solid' (click)="salir()">Salir</ion-button>
+      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content fixed>
+ <div class="title">
+   <h1>Tu ubicación actual</h1>
+ </div>
+<ion-spinner *ngIf="loading" name="dots" class="spin"></ion-spinner>
+<div id="mapa-mapbox"></div>
+<div class="titulo" style="margin: 5%;"><ion-title>Estacionamientos cercanos</ion-title></div>
+<div class="est">
+  <ion-list-header>
+    <ion-label>22mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
+    <ion-button>Ver datos</ion-button>
+  </ion-list-header>
+  <ion-list-header>
+    <ion-label>31mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
+    <ion-button>Ver datos</ion-button>
+  </ion-list-header>
+  <ion-list-header>
+    <ion-label>34mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
+    <ion-button>Ver datos</ion-button>
+  </ion-list-header>
+  <ion-list-header>
+    <ion-label>40mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
+    <ion-button>Ver datos</ion-button>
+  </ion-list-header>
+</div>
 </ion-content>
