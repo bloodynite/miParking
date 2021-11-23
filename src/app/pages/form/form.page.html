@@ -15,7 +15,7 @@
       <ion-col size-xs="12" size-md="8" size-lg="8">
         <ion-item>
           <ion-label>Tipo de Usuario</ion-label>
-          <ion-select [(ngModel)]="typeUser" (ionChange)=onChange($event) [interfaceOptions]="customOptions"
+          <ion-select [(ngModel)]="typeUser" (ionChange)=onChange()
             interface="action-sheet" placeholder="Seleccionar">
             <ion-select-option value="user">Usuario</ion-select-option>
             <ion-select-option value="duenio">Dueño</ion-select-option>
@@ -62,7 +62,7 @@
             <ion-item>
               <ion-label>Banco <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="banco" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required formControlName="banco" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let banco of bancos" [value]="{ id: banco.id, nombre: banco.nombre }">
                   {{banco.nombre}}</ion-select-option>
@@ -71,7 +71,7 @@
             <ion-item>
               <ion-label>Tipo de Cuenta <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="cuenta" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required formControlName="cuenta" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let cuenta of tipoCuentas"
                   [value]="{ id: cuenta.id, nombre: cuenta.nombre }">{{cuenta.nombre}}</ion-select-option>
@@ -137,7 +137,7 @@
             <ion-item>
               <ion-label>Region <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required (ionChange)=onChangeRegion($event) formControlName="region" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required (ionChange)=onChangeRegion($CustomEvent) formControlName="region" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let region of regiones" [value]="{region: region.region}">
                   {{region.region}}</ion-select-option>
@@ -146,7 +146,7 @@
             <ion-item>
               <ion-label>Comuna <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="comuna" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required formControlName="comuna" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let comuna of comunas" [value]="{comuna: comuna}">
                   {{comuna}}</ion-select-option>
@@ -160,7 +160,7 @@
             <ion-item>
               <ion-label>Banco <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="banco" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required formControlName="banco" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let banco of bancos" [value]="{ id: banco.id, nombre: banco.nombre }">
                   {{banco.nombre}}</ion-select-option>
@@ -169,7 +169,7 @@
             <ion-item>
               <ion-label>Tipo de Cuenta <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="cuenta" [interfaceOptions]="customOptions" interface="action-sheet"
+              <ion-select required formControlName="cuenta" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let cuenta of tipoCuentas"
                   [value]="{ id: cuenta.id, nombre: cuenta.nombre }">{{cuenta.nombre}}</ion-select-option>
