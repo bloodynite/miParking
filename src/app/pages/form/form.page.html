@@ -137,7 +137,7 @@
             <ion-item>
               <ion-label>Region <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required (ionChange)=onChangeRegion($CustomEvent) formControlName="region" interface="action-sheet"
+              <ion-select required (ionChange)=onChangeRegion($event) formControlName="region" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let region of regiones" [value]="{region: region.region}">
                   {{region.region}}</ion-select-option>
