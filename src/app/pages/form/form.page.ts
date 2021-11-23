@@ -115,8 +115,9 @@ export class FormPage implements OnInit {
     req.send();
   }
 
-  onChangeRegion(event: CustomEvent){
-    const regionSelect =  event.detail.value.region;
+  onChangeRegion(event: any){
+    // eslint-disable-next-line @typescript-eslint/dot-notation
+    const regionSelect = (event.target as HTMLInputElement).value['region'];
     const result = this.regiones.filter(region => region.region === regionSelect
     );
     this.comunas = result[0].comunas;
