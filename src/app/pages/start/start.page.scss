@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box  ;
+}
+
+
+.user-icon{ 
+    display: block;
+    font-size: 10rem;
+    margin: auto auto;
+    color: #3880ff;
+}
+
+.start-grid{
+    text-align: center;
+}
+
+.input{
+    border: 1px solid blue;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    &:focus-within{
+        border: 1px solid black;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+}
+.col-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-button{
+    margin-top: 10%;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.btn-invitado{
+    position: absolute;
+    bottom: 10%;
+}
+
+.label-invitado{
+    position: absolute;
+    bottom: 17%;
+}

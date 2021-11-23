@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-title class="ion-text-center" capitalize='true'>Mi Estacionamiento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid class="ion-text-center" fixed>
+  <ion-row>
+    <ion-col class="user-col" size="12">
+      <ion-icon class="user-icon" name="car"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-text color="primary">
+        <h1>Iniciar Sesión</h1>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6" size-md="4">
+      <ion-input class="input" type="email" placeholder="email" clear-input=true inputmode='email' required></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6" size-md="4">
+      <ion-input class="input" type="password" placeholder="password" required></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6">
+      <ion-button size="6" size-md="4" size-lg="4" (click)="onClick()" expand="block" shape="round">
+        Entrar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6">
+      <a [routerLink]="['/form']" routerLinkActive="router-link-active" >Registrarse</a>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="label-invitado" size="12">Solo ver estacionamientos cercanos?</ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="btn-invitado" size="6" size-md="4" size-lg="4"><ion-button (click)="onClick()" fill="clear" shape="round">
+      Ver como invitado
+    </ion-button>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

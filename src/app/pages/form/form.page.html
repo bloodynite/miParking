@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Registrarse</ion-title>
+  <ion-buttons slot="start">
+   <ion-buttons slot="start">
+     <ion-back-button defaultHref="/start"></ion-back-button>
+   </ion-buttons>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-text-center" fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="12" size-md="8" size-lg="8">
+        <ion-item>
+          <ion-label>Tipo de Usuario</ion-label>
+          <ion-select value="type" [interfaceOptions]="customOptions" interface="action-sheet" placeholder="Seleccionar">
+            <ion-select-option value="user">Usuario</ion-select-option>
+            <ion-select-option value="duenio">Dueño</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size-xs="12" size-md="8" size-lg="8"><form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      <ion-title style="margin-top: 15%; margin-bottom: 10%;">Datos Usuario</ion-title>
+      <ion-item>
+        <ion-label position="floating">Nombres <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="nombres" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="apellidos" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Rut <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="rut" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Teléfono <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="telefono" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-title style="margin-top: 15%; margin-bottom: 10%;">Datos Bancarios</ion-title>
+      <ion-item>
+        <ion-label>Banco <ion-text color="danger">*</ion-text></ion-label>
+        <ion-select required formControlName="banco"  [interfaceOptions]="customOptions" interface="action-sheet" placeholder="Seleccionar">
+          <ion-select-option *ngFor="let banco of bancos" [ngValue]="{ id: banco.id, nombre: banco.nombre }">{{banco.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo de Cuenta <ion-text color="danger">*</ion-text></ion-label>
+        <ion-select  [interfaceOptions]="customOptions" interface="action-sheet" placeholder="Seleccionar">
+          <ion-select-option *ngFor="let cuenta of tipoCuentas" [ngValue]="{ id: cuenta.id, nombre: cuenta.nombre }">{{cuenta.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button style="margin-top: 20%;" block color="primary" type="submit" [disabled]="regForm.invalid">
+        Registrarse
+      </ion-button>
+    </form></ion-col>
+    <ion-col size="6"></ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
