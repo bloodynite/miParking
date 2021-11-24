@@ -27,40 +27,53 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size-xs="12" size-md="8" size-lg="8">
           <form [formGroup]="regUser" (ngSubmit)="onSubmitRegUser()">
-            <ion-title style="margin-top: 10%; margin-bottom: 10%;">Datos Usuario</ion-title>
+            <ion-item-divider style="margin-top: 10%;">
+              <ion-label>
+                Datos del Usuario
+              </ion-label>
+            </ion-item-divider>
             <ion-item>
-              <ion-label position="floating">Nombres <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Nombres <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="nombres" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Apellidos <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Apellidos <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="apellidos" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Rut <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Rut <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="rut" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Teléfono <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Teléfono <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-input required formControlName="telefono" type="text"></ion-input>
+              <ion-input required formControlName="telefono" pattern=".{9,}" type="number"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Email <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="email" type="email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Contraseña <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="password" type="password"></ion-input>
             </ion-item>
-            <ion-title style="margin-top: 15%; margin-bottom: 10%;">Datos Bancarios</ion-title>
+            <ion-item-divider style="margin-top: 10%;">
+              <ion-label>
+                Datos Bancarios
+              </ion-label>
+            </ion-item-divider>
             <ion-item>
-              <ion-label>Banco <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">N˚ de Cuenta <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required formControlName="nCuenta" pattern=".{6,}" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Banco <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-select required formControlName="banco" interface="action-sheet"
                 placeholder="Seleccionar">
@@ -69,9 +82,9 @@
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-label>Tipo de Cuenta <ion-text color="danger">*</ion-text>
+              <ion-label position="floating">Tipo de Cuenta <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="cuenta" interface="action-sheet"
+              <ion-select required formControlName="tcuenta" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let cuenta of tipoCuentas"
                   [value]="{ id: cuenta.id, nombre: cuenta.nombre }">{{cuenta.nombre}}</ion-select-option>
@@ -95,47 +108,47 @@
               </ion-label>
             </ion-item-divider>
             <ion-item>
-              <ion-label position="floating">Nombres <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Nombres <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="nombres" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Apellidos <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Apellidos <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="apellidos" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Rut <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Rut <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="rut" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Teléfono <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Teléfono <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-input required formControlName="telefono" type="text"></ion-input>
+              <ion-input required formControlName="telefono" pattern=".{9,}" type="number"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Email <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="email" type="email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Contraseña <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="password" type="password"></ion-input>
             </ion-item>
             <ion-item-divider style="margin-top: 10%;">
               <ion-label>
-                Datos de Estacionamiento
+                Datos del Estacionamiento
               </ion-label>
             </ion-item-divider>
             <ion-item>
-              <ion-label position="floating">Dirección Estac. <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">Dirección Estacionamiento <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-input required formControlName="direEstac" type="text"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Region <ion-text color="danger">*</ion-text>
+              <ion-label position="floating">Region <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-select required (ionChange)=onChangeRegion($event) formControlName="region" interface="action-sheet"
                 placeholder="Seleccionar">
@@ -144,7 +157,7 @@
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-label>Comuna <ion-text color="danger">*</ion-text>
+              <ion-label position="floating">Comuna <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-select required formControlName="comuna" interface="action-sheet"
                 placeholder="Seleccionar">
@@ -152,13 +165,18 @@
                   {{comuna}}</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item-divider style="margin-top: 10%; margin-bottom: 10%;">
+            <ion-item-divider style="margin-top: 10%;">
               <ion-label>
                 Datos Bancarios
               </ion-label>
             </ion-item-divider>
             <ion-item>
-              <ion-label>Banco <ion-text color="danger">*</ion-text>
+              <ion-label position="stacked">N˚ de Cuenta <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required formControlName="numeroCuenta" pattern=".{6,}" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Banco <ion-text color="danger">*</ion-text>
               </ion-label>
               <ion-select required formControlName="banco" interface="action-sheet"
                 placeholder="Seleccionar">
@@ -167,9 +185,9 @@
               </ion-select>
             </ion-item>
             <ion-item>
-              <ion-label>Tipo de Cuenta <ion-text color="danger">*</ion-text>
+              <ion-label position="floating">Tipo de Cuenta <ion-text color="danger">*</ion-text>
               </ion-label>
-              <ion-select required formControlName="cuenta" interface="action-sheet"
+              <ion-select required formControlName="tipoCuenta" interface="action-sheet"
                 placeholder="Seleccionar">
                 <ion-select-option *ngFor="let cuenta of tipoCuentas"
                   [value]="{ id: cuenta.id, nombre: cuenta.nombre }">{{cuenta.nombre}}</ion-select-option>

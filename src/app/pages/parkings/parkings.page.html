@@ -1,9 +1,69 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>parkings</ion-title>
+    <ion-title>Datos de Estacionamiento</ion-title>
+    <ion-buttons slot="end">
+      <ion-buttons slot="end">
+        <ion-button color="danger" fill='solid' (click)="salir()">Salir</ion-button>
+      </ion-buttons>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<!-- List of Text Items -->
+<ion-list>
+  <ion-item>
+    <ion-label>Dirección</ion-label>
+    <span>Los Maitenes #2022</span>
+  </ion-item>
+  <ion-item>
+    <ion-label>Valor Hora</ion-label>
+    <span>$500</span>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nombre del Dueño</ion-label>
+    <span>Franco Palta</span>
+  </ion-item>
+  <ion-item>
+    <ion-label>Horario</ion-label>
+    <span>9:00 a 21:00 hrs</span>
+  </ion-item>
+</ion-list>
 
+<!-- List of Input Items -->
+<ion-list>
+  <ion-item>
+    <ion-label>Tipo de Autos</ion-label>
+    <ion-radio slot="end"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>City Car</ion-label>
+    <ion-checkbox slot="start" checked="true" disabled="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sedan</ion-label>
+    <ion-checkbox slot="start" checked="true" disabled="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Camioneta</ion-label>
+    <ion-checkbox slot="start" checked="true" disabled="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Van</ion-label>
+    <ion-checkbox slot="start" checked="true" disabled="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Camion 3/14</ion-label>
+    <ion-checkbox slot="start" disabled="true"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Camion Grande</ion-label>
+    <ion-checkbox slot="start" disabled="true"></ion-checkbox>
+  </ion-item>
+</ion-list>
 </ion-content>

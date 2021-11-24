@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Banco, Comuna, Region, TipoCuenta } from 'src/app/interfaces/banco.interface';
 import { Sweetalert2Service } from 'src/app/services/sweetalert2.service';
@@ -49,7 +49,8 @@ export class FormPage implements OnInit {
     email: new FormControl(),
     password: new FormControl(),
     banco: new FormControl(),
-    cuenta: new FormControl()
+    tcuenta: new FormControl(),
+    nCuenta: new FormControl()
   });
 
   regDuenio: FormGroup = new FormGroup({
@@ -63,7 +64,8 @@ export class FormPage implements OnInit {
     cuenta: new FormControl(),
     direEstac: new FormControl(),
     region: new FormControl(),
-    comuna: new FormControl()
+    comuna: new FormControl(),
+    numeroCuenta: new FormControl()
   });
 
   typeUser: string;
@@ -72,17 +74,48 @@ export class FormPage implements OnInit {
   banco: any;
   regiones: Array<Region>;
   comunas: Array<Comuna>;
+  emailPattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$';
 
-  constructor(private alertService: Sweetalert2Service, private router: Router) {
+  constructor(private alertService: Sweetalert2Service, private router: Router, private fb: FormBuilder) {
     this.fetch(data => {
       this.regiones = data;
-      console.log(this.regiones);
     });
   }
 
   ngOnInit() {
     this.typeUser = 'user';
+    this.crearRegForm();
   }
+
+  crearRegForm(){
+    this.regUser = this.fb.group({
+      nombres: ['',[Validators.required, Validators.minLength(3)]],
+      apellidos: ['',[Validators.required, Validators.minLength(3)]],
+      rut: ['',[Validators.required, Validators.minLength(9)]],
+      telefono: ['',[Validators.required]],
+      email: ['',[Validators.required, Validators.minLength(6),Validators.pattern(this.emailPattern)]],
+      password: ['',[Validators.required, Validators.minLength(5)]],
+      banco: ['',[Validators.required, Validators.minLength(3)]],
+      tcuenta: ['',[Validators.required, Validators.minLength(3)]],
+      nCuenta: ['',[Validators.required]]
+    });
+
+    this.regDuenio = this.fb.group({
+      nombres: ['',[Validators.required, Validators.minLength(3)]],
+      apellidos: ['',[Validators.required, Validators.minLength(3)]],
+      rut: ['',[Validators.required, Validators.minLength(9)]],
+      telefono: ['',[Validators.required]],
+      email: ['',[Validators.required, Validators.minLength(6),Validators.pattern(this.emailPattern)]],
+      password: ['',[Validators.required, Validators.minLength(5)]],
+      banco: ['',[Validators.required, Validators.minLength(3)]],
+      numeroCuenta: ['',[Validators.required]],
+      tipoCuenta: ['',[Validators.required, Validators.minLength(3)]],
+      direEstac: ['',[Validators.required, Validators.minLength(5)]],
+      region: ['',[Validators.required, Validators.minLength(3)]],
+      comuna: ['',[Validators.required, Validators.minLength(3)]]
+    });
+
+  };
 
   onChange() {
     if (this.typeUser === 'duenio') {
@@ -93,12 +126,10 @@ export class FormPage implements OnInit {
   }
 
   onSubmitRegUser() {
-    console.log(this.regUser.value);
     this.alertService.sweetOK('Usuario Registrado', 'Se ha ingresado el usuario exitosamente');
     this.router.navigateByUrl('/start');
   }
   onSubmitRegDuenio() {
-    console.log(this.regDuenio.value);
     this.alertService.sweetOK('Usuario Registrado', 'Se ha ingresado el usuario exitosamente');
     this.router.navigateByUrl('/start');
 
@@ -121,7 +152,11 @@ export class FormPage implements OnInit {
     const result = this.regiones.filter(region => region.region === regionSelect
     );
     this.comunas = result[0].comunas;
-    console.log(this.comunas);
+  }
+
+  get emailNotValid(){
+    const getEmail = this.regUser.get('email');
+    return getEmail.invalid && getEmail.touched;
   }
 
 }

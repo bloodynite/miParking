@@ -10,28 +10,52 @@
 </ion-header>
 
 <ion-content fixed>
- <div class="title">
-   <h1>Tu ubicación actual</h1>
- </div>
-<ion-spinner *ngIf="loading" name="dots" class="spin"></ion-spinner>
-<div id="mapa-mapbox"></div>
-<div class="titulo" style="margin: 5%;"><ion-title>Estacionamientos cercanos</ion-title></div>
-<div class="est">
-  <ion-list-header>
-    <ion-label>22mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
-    <ion-button>Ver datos</ion-button>
-  </ion-list-header>
-  <ion-list-header>
-    <ion-label>31mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
-    <ion-button>Ver datos</ion-button>
-  </ion-list-header>
-  <ion-list-header>
-    <ion-label>34mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
-    <ion-button>Ver datos</ion-button>
-  </ion-list-header>
-  <ion-list-header>
-    <ion-label>40mts <span style="font-size: 1rem;">Nombre Calle</span></ion-label>
-    <ion-button>Ver datos</ion-button>
-  </ion-list-header>
-</div>
+  <div class="title">
+    <h1>Tu ubicación actual</h1>
+  </div>
+  <ion-spinner *ngIf="loading" name="dots" class="spin"></ion-spinner>
+  <div id="mapa-mapbox"></div>
+  <div class="titulo ion-justify-content-center" style="margin: 5%;">
+    <h1>Estacionamientos cercanos</h1>
+  </div>
+  <div class="est">
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-badge color="primary">10 Mts</ion-badge>
+        </ion-col>
+        <ion-col size="5"><span style="font-size: 1rem;">Los Maitenes #2223</span></ion-col>
+        <ion-col size="3">
+          <ion-button (click)="onClick()">Ver datos</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-badge color="primary">15 Mts</ion-badge>
+        </ion-col>
+        <ion-col size="5"><span style="font-size: 1rem;">Las Peraltas #2223</span></ion-col>
+        <ion-col size="3">
+          <ion-button (click)="onClick()">Ver datos</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-badge color="primary">22 Mts</ion-badge>
+        </ion-col>
+        <ion-col size="5"><span style="font-size: 1rem;">Los Quijotes #2223</span></ion-col>
+        <ion-col size="3">
+          <ion-button (click)="onClick()">Ver datos</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-badge color="primary">26 Mts</ion-badge>
+        </ion-col>
+        <ion-col size="5"><span style="font-size: 1rem;">El Presidente #2022</span></ion-col>
+        <ion-col size="3">
+          <ion-button (click)="onClick()">Ver datos</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

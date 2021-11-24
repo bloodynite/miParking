@@ -23,7 +23,6 @@ export class HomePage implements OnInit {
     });
 
     Mapboxgl.accessToken = environment.mapTkn;
-    console.log('cargando data');
     this.loading = false;
     this.mapa = new Mapboxgl.Map({
     container: 'mapa-mapbox', // container ID
@@ -40,7 +39,6 @@ export class HomePage implements OnInit {
   }
 
   async getLocationService(): Promise<any>{
-    console.log('iniciando');
     this.loading = true;
     return await new Promise((resolve, reject)=>{
       navigator.geolocation.getCurrentPosition(resp=>{
@@ -53,5 +51,9 @@ export class HomePage implements OnInit {
     const marker = new Mapboxgl.Marker({
       draggable: true
     }).setLngLat([lng, lat]).addTo(this.mapa);
+  }
+
+  onClick(){
+    this.router.navigateByUrl('/parkings');
   }
 }
