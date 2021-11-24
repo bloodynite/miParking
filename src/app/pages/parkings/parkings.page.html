@@ -14,7 +14,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-text-center">
 <!-- List of Text Items -->
 <ion-list>
   <ion-item>
@@ -38,8 +38,7 @@
 <!-- List of Input Items -->
 <ion-list>
   <ion-item>
-    <ion-label>Tipo de Autos</ion-label>
-    <ion-radio slot="end"></ion-radio>
+    <ion-label>Tipos de autos permitidos</ion-label>
   </ion-item>
   <ion-item>
     <ion-label>City Car</ion-label>
@@ -66,4 +65,8 @@
     <ion-checkbox slot="start" disabled="true"></ion-checkbox>
   </ion-item>
 </ion-list>
+<ion-button style="margin-top: 5%;" (click)="onClickReserva()">
+  <ion-icon slot="start" name="card"></ion-icon>
+  Reservar
+</ion-button>
 </ion-content>

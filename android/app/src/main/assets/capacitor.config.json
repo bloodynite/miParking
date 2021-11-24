@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "miParking",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

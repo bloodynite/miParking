@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle Reserva</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-label>Fecha de inicio</ion-label>
+    <ion-input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" [(ngModel)]="fecIni" placeholder="dd/mm/yyyy"></ion-input>
+    <ion-button (click)="fechaInicio()">
+      <ion-icon slot="icon-only" name="calendar"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fecha de termino</ion-label>
+    <ion-input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" [(ngModel)]="fecTerm" placeholder="dd/mm/yyyy"></ion-input>
+    <ion-button (click)="fechaTermino()">
+      <ion-icon slot="icon-only" name="calendar"></ion-icon>
+    </ion-button>
+  </ion-item> -->
+  <ion-item-divider>
+    <ion-label>
+      Datos de reserva
+    </ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-label>Fecha se reserva</ion-label>
+    <ion-datetime displayFormat="DD/MM/YY" placeholder="Seleccionar Fecha"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hora Inicio</ion-label>
+    <ion-datetime displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hora Termino</ion-label>
+    <ion-datetime displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Total</ion-label>
+    <ion-input slot="end" type='text' value='$5000'></ion-input>
+  </ion-item>
+  <ion-item-divider style="margin-top: 10%;">
+    <ion-label>
+      Medio de Pago
+    </ion-label>
+  </ion-item-divider>
+  <ion-item>
+    <ion-label>Debito</ion-label>
+    <ion-checkbox slot="start"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Credito</ion-label>
+    <ion-checkbox slot="start"></ion-checkbox>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="danger" (click)="salir()" slot="start" class="ion-margin-end">Atrás</ion-button>
+    <ion-button color="primary" (click)="pagar()" slot="end" class="ion-margin-end">Aceptar</ion-button>
+  </ion-toolbar>
+</ion-footer>

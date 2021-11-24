@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'parkings',
     loadChildren: () => import('./pages/parkings/parkings.module').then( m => m.ParkingsPageModule)
+  },
+  {
+    path: 'reporte',
+    loadChildren: () => import('./pages/reporte/reporte.module').then( m => m.ReportePageModule)
+  },
+  {
+    path: 'reserva',
+    loadChildren: () => import('./modals/reserva/reserva.module').then( m => m.ReservaPageModule)
   }
 ];
 
