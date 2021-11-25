@@ -56,4 +56,8 @@ export class HomePage implements OnInit {
   onClick(){
     this.router.navigateByUrl('/parkings');
   }
+
+  reporte(){
+    this.router.navigateByUrl('/reporte');
+  }
 }

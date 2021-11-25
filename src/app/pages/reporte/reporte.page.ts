@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sweetalert2Service } from 'src/app/services/sweetalert2.service';
 
 @Component({
   selector: 'app-reporte',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportePage implements OnInit {
 
-  constructor() { }
+  constructor(private alertServ: Sweetalert2Service) { }
 
   ngOnInit() {
+  }
+
+  descargar(){
+    this.alertServ.sweetOK('Archivo Descargado', 'Se ha generado el reporte exitosamente');
   }
 
 }

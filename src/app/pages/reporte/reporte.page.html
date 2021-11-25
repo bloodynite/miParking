@@ -1,9 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>reporte</ion-title>
+    <ion-title class="ion-text-center">Reporte de Arriendos</ion-title>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <table class="table">
+    <thead>
+      <th>Cliente</th>
+      <th>Valor Hora</th>
+      <th>Hora de inicio</th>
+      <th>Hora de termino</th>
+      <th>Monto total</th>
+    </thead>
+    <tbody>
+      <ion-item-divider style="margin-top: 5%;">
+        <ion-label>
+          Fecha: 15/11/21
+        </ion-label>
+      </ion-item-divider>
+      <tr>
+        <td data-label="Cliente">Raul Cornejo</td>
+        <td data-label="Valor Hora">{{1000 | currency:"CLP":"symbol-narrow"}}</td>
+        <td data-label="Hora de inicio">08:30</td>
+        <td data-label="Hora de termino">16:40</td>
+        <td data-label="Monto total">{{7500 | currency:"CLP":"symbol-narrow"}}</td>
+      </tr>
+      <ion-item-divider style="margin-top: 5%;">
+        <ion-label>
+          Fecha: 16/11/21
+        </ion-label>
+      </ion-item-divider>
+      <tr>
+        <td data-label="Cliente">Raul Cornejo</td>
+        <td data-label="Valor Hora">${{1000 | currency:"CLP":"symbol-narrow"}}</td>
+        <td data-label="Hora de inicio">08:30</td>
+        <td data-label="Hora de termino">16:40</td>
+        <td data-label="Monto total">{{7500 | currency:"CLP":"symbol-narrow"}}</td>
+      </tr>
+      <ion-item-divider style="margin-top: 5%;">
+        <ion-label>
+          Fecha: 18/11/21
+        </ion-label>
+      </ion-item-divider>
+      <tr>
+        <td data-label="Cliente">Raul Cornejo</td>
+        <td data-label="Valor Hora">${{1000 | currency:"CLP":"symbol-narrow"}}</td>
+        <td data-label="Hora de inicio">08:30</td>
+        <td data-label="Hora de termino">16:40</td>
+        <td data-label="Monto total">{{7500 | currency:"CLP":"symbol-narrow"}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ion-toolbar>
+    <ion-button color="primary" (click)="descargar()" slot="end" class="ion-margin-end">
+      Descargar Reporte <ion-icon slot="start" name="cloud-download"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
 </ion-content>
